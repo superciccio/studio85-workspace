@@ -1,0 +1,71 @@
+<mat-toolbar class="example-header ">
+
+  <mat-icon (click)="sidenav.open()" class="pointer showMenuBtn" >menu</mat-icon>
+
+  <span class="example-spacer"></span>
+
+  <app-top-header></app-top-header>
+
+</mat-toolbar>
+
+<mat-sidenav-container class="example-container">
+
+  <mat-sidenav #sidenav [mode]="'side'" class="example-sidenav"
+               [fixedInViewport]="true" [fixedTopGap]="0"
+               [fixedBottomGap]="0">
+
+    <div style="    height: 80px;
+    display: block;
+    position: relative;" [routerLink]="['home']" class="pointer">
+
+      <img src="../assets/logo.svg" height="70%" width="70%"  style="    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);">
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <mat-nav-list>
+      <a mat-list-item routerLinkActive="active-list-item" [routerLink]="['home']">
+        <mat-icon mat-list-icon >home</mat-icon>
+        <span style="margin-left: 1rem;color: black;">Home</span>
+      </a>
+      <a mat-list-item routerLinkActive="active-list-item" [routerLink]="['products']">
+        <mat-icon mat-list-icon >category</mat-icon>
+        <span style="margin-left: 1rem;color: black;">Warehouse</span>
+      </a>
+      <a mat-list-item routerLinkActive="active-list-item" [routerLink]="['collections']">
+        <mat-icon mat-list-icon >apps</mat-icon>
+        <span style="margin-left: 1rem;color: black;">Collections</span>
+      </a>
+      <a mat-list-item routerLinkActive="active-list-item" [routerLink]="['orders']">
+        <mat-icon mat-list-icon >list_alt</mat-icon>
+        <span style="margin-left: 1rem;color: black;">Orders</span>
+      </a>
+      <a mat-list-item routerLinkActive="active-list-item" [routerLink]="['discounts']">
+        <mat-icon mat-list-icon >local_offer</mat-icon>
+        <span style="margin-left: 1rem;color: black;">Discounts</span>
+      </a>
+      <a mat-list-item routerLinkActive="active-list-item" >
+        <mat-icon mat-list-icon >account_balance</mat-icon>
+        <span style="margin-left: 1rem;color: black;">Get paid</span>
+      </a>
+      <a mat-list-item routerLinkActive="active-list-item" [routerLink]="['messages']">
+        <mat-icon mat-list-icon >message</mat-icon>
+        <span style="margin-left: 1rem;color: black;">Messages</span>
+      </a>
+      <a mat-list-item routerLinkActive="active-list-item" [routerLink]="['account-settings']">
+        <mat-icon mat-list-icon >settings</mat-icon>
+        <span style="margin-left: 1rem;color: black;">Settings</span>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content  >
+
+    <router-outlet></router-outlet>
+
+  </mat-sidenav-content>
+
+</mat-sidenav-container>

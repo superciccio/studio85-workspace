@@ -1,0 +1,41 @@
+
+<mat-sidenav-container
+  class="example-container" (backdropClick)="close('backdrop')" >
+
+
+
+  <mat-sidenav #sidenav (keydown.escape)="close('escape')" disableClose position="end">
+    <app-basket-side-bar *ngIf="topBar.showBasket"></app-basket-side-bar>
+    <app-login-page *ngIf="!topBar.showBasket"></app-login-page>
+  </mat-sidenav>
+
+  <mat-sidenav #mobileSideNav (keydown.escape)="close('escape')" disableClose>
+    <mat-nav-list>
+      <a mat-list-item routerLinkActive="active-list-item" [routerLink]="['products']">
+        <mat-icon mat-list-icon >category</mat-icon>
+        <span style="margin-left: 1rem;color: black;">Products</span>
+      </a>
+      <a mat-list-item routerLinkActive="active-list-item" [routerLink]="['services']">
+        <mat-icon mat-list-icon >design_services</mat-icon>
+        <span style="margin-left: 1rem;color: black;">Services</span>
+      </a>
+      <a mat-list-item routerLinkActive="active-list-item" [routerLink]="['about-us']">
+        <mat-icon mat-list-icon >explore</mat-icon>
+        <span style="margin-left: 1rem;color: black;">About us</span>
+      </a>
+      <a mat-list-item routerLinkActive="active-list-item" [routerLink]="['contacts']">
+        <mat-icon mat-list-icon >contact_support</mat-icon>
+        <span style="margin-left: 1rem;color: black;">Contacts</span>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+
+    <mat-sidenav-content >
+    <app-top-bar [sidenav]="sidenav"  [mobileMenu]="mobileSideNav" #topBar ></app-top-bar>
+    <router-outlet ></router-outlet>
+      <app-footer style=" bottom:0" class="full-width" ></app-footer>
+
+    </mat-sidenav-content>
+
+</mat-sidenav-container>

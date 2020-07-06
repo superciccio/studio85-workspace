@@ -1,0 +1,278 @@
+<div class="flag"></div>
+
+<mat-toolbar class="example-header ">
+
+  <mat-icon (click)="sidenav.open()" class="pointer showMenuBtn" >menu</mat-icon>
+
+  <span class="example-spacer"></span>
+
+  <app-top-header></app-top-header>
+
+</mat-toolbar>
+
+<mat-sidenav-container class="example-container">
+
+  <mat-sidenav #sidenav [mode]="'side'" class="example-sidenav"
+               [fixedInViewport]="true" [fixedTopGap]="0"
+               [fixedBottomGap]="0">
+
+    <div style="    height: 80px;
+    display: block;
+    position: relative;" [routerLink]="['home']" class="pointer">
+
+      <img src="../assets/logo.svg" height="70%" width="70%"  style="    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);">
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <mat-nav-list>
+      <a mat-list-item routerLinkActive="active-list-item" [routerLink]="[]">
+        <mat-icon mat-list-icon >home</mat-icon>
+        <span style="margin-left: 1rem;color: black;">Home</span>
+      </a>
+      <a mat-list-item routerLinkActive="active-list-item" [routerLink]="['products']">
+        <mat-icon mat-list-icon >category</mat-icon>
+        <span style="margin-left: 1rem;color: black;">Warehouse</span>
+      </a>
+      <a mat-list-item routerLinkActive="active-list-item" [routerLink]="['collections']">
+        <mat-icon mat-list-icon >apps</mat-icon>
+        <span style="margin-left: 1rem;color: black;">Collections</span>
+      </a>
+      <a mat-list-item routerLinkActive="active-list-item" [routerLink]="['orders']">
+        <mat-icon mat-list-icon >list_alt</mat-icon>
+        <span style="margin-left: 1rem;color: black;">Orders</span>
+      </a>
+      <a mat-list-item routerLinkActive="active-list-item" [routerLink]="['discounts']">
+        <mat-icon mat-list-icon >local_offer</mat-icon>
+        <span style="margin-left: 1rem;color: black;">Discounts</span>
+      </a>
+      <a mat-list-item routerLinkActive="active-list-item" >
+        <mat-icon mat-list-icon >account_balance</mat-icon>
+        <span style="margin-left: 1rem;color: black;">Get paid</span>
+      </a>
+      <a mat-list-item routerLinkActive="active-list-item" [routerLink]="['messages']">
+        <mat-icon mat-list-icon >message</mat-icon>
+        <span style="margin-left: 1rem;color: black;">Messages</span>
+      </a>
+      <a mat-list-item routerLinkActive="active-list-item" [routerLink]="['account-settings']">
+        <mat-icon mat-list-icon >settings</mat-icon>
+        <span style="margin-left: 1rem;color: black;">Settings</span>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content  >
+
+
+    <div style="    margin-bottom: 24px; margin-left: 24px" class="spaceTopWithHello">
+      <span class="mat-display-1">Hello, admin@example.com</span>
+      <br>
+      <span class="subtitle">Below, some information about your store</span>
+    </div>
+
+    <div style="display: flex;">
+
+
+      <!-- Sales and orders card. Activity panel -->
+
+      <div style="display: contents;">
+
+        <div class="widthLeftPanel">
+
+          <div style="display: flex">
+            <!-- Sales card -->
+            <div  style="width: 50%; margin-left: 1rem; margin-right: 1rem; height: fit-content;">
+
+              <mat-card class="example-card" style="border-radius: 20px; background-color: rgb(0, 140, 69);">
+
+                <mat-card-content style="margin-left: 0.4rem;">
+
+                  <span class="mat-h1" style="color: black">Sales</span>
+
+                  <div style="display: flex; margin-top: 1rem;">
+                    <div style="width: 75%; color: black">
+                      <span class="mat-subheading-1 salesNotSmall">This month</span>
+                      <span class="mat-subheading-1 salesNotSmall" style="margin-bottom: 6px">{{12323256 | currency:'USD'}}</span>
+
+
+                      <span class="mat-subheading-1 salesSmall removeMargin">This month</span>
+                      <span class="mat-subheading-1 salesSmall" style="margin-bottom: 6px">{{12323256 | currency:'USD'}}</span>
+
+                      <span class="mat-subheading-1 salesNotSmall" >Till today</span>
+                      <span class="mat-subheading-1 salesNotSmall" >{{2500 | currency:'USD'}}</span>
+
+                      <span class="mat-subheading-1 salesSmall removeMargin" >Till today</span>
+                      <span class="mat-subheading-1 salesSmall" >{{2500 | currency:'USD'}}</span>
+
+                    </div>
+
+                    <div class="imgSpace">
+                      <img src="assets/graph.svg" style="width: 100%;height: auto;" >
+                    </div>
+
+                  </div>
+                </mat-card-content>
+              </mat-card>
+            </div>
+
+            <!-- orders card -->
+            <div style="width: 50%; margin-right: 1.5rem;height: fit-content;">
+              <mat-card class="example-card" style="border-radius: 20px; background-color: #ffb74d">
+
+                <mat-card-content style="margin-left: 0.4rem;">
+
+                  <span class="mat-h1" style="color: black">Orders</span>
+
+                  <div style="display: flex; margin-top: 1rem;">
+                    <div style="width: 75%; color: black">
+                      <span class="mat-subheading-1 salesNotSmall">This month</span>
+                      <span class="mat-subheading-1 salesNotSmall" style="margin-bottom: 6px">1256543456</span>
+
+                      <span class="mat-subheading-1 salesSmall removeMargin" >This month</span>
+                      <span class="mat-subheading-1 salesSmall" style="margin-bottom: 6px">1256543456</span>
+
+                      <span class="mat-subheading-1 salesNotSmall">Till today</span>
+                      <span class="mat-subheading-1 salesNotSmall">332323232323232323</span>
+
+                      <span class="mat-subheading-1 salesSmall removeMargin" >Till today</span>
+                      <span class="mat-subheading-1 salesSmall" >332323232323232323</span>
+                    </div>
+                    <div class="imgSpace">
+                      <img src="assets/orders.png" style="width: 100%;height: auto;">
+
+                    </div>
+
+                  </div>
+                </mat-card-content>
+              </mat-card>
+            </div>
+          </div>
+
+
+
+          <div class="widthBody">
+            <mat-card >
+              <mat-card-content>
+
+                <div style="margin: 1.5rem 1rem 1rem;">
+                  <p matLine>
+                    <span> Today Orders  </span>
+                    <span style="margin-left: .5rem;"> 20 </span>
+                    <span style="float: right">View All</span>
+                  </p>
+                </div>
+
+
+                <div  style="margin: 1.5rem 1rem 1rem;">
+                  <p matLine>
+                    <span> Product of stock </span>
+                    <span style="margin-left: .5rem;"> 9 </span>
+                    <span style="float: right">View All</span>
+                  </p>
+                </div>
+
+              </mat-card-content>
+            </mat-card>
+          </div>
+
+          <div class="mt-2"> </div>
+
+          <div class="widthBody">
+            <mat-card>
+              <mat-card-header>Last messages from Studio 85</mat-card-header>
+              <mat-card-content>
+                <div>
+                  <mat-list>
+                    <mat-list-item >
+                      <p matLine>
+                        <span> Title Message </span>
+                        <span style="margin-left: .5rem;"> -- loremp ipsum </span>
+                        <span style="float: right">Open</span>
+                      </p>
+                    </mat-list-item>
+                    <mat-list-item >
+                      <p matLine>
+                        <span> Title Message </span>
+                        <span style="margin-left: .5rem;"> -- loremp ipsum </span>
+                        <span style="float: right">Open</span>
+                      </p>
+                    </mat-list-item>
+                    <mat-list-item >
+                      <p matLine>
+                        <span> Title Message </span>
+                        <span style="margin-left: .5rem;"> -- loremp ipsum </span>
+                        <span style="float: right">Open</span>
+                      </p>
+                    </mat-list-item>
+                    <mat-list-item >
+                      <p matLine>
+                        <span> Title Message </span>
+                        <span style="margin-left: .5rem;"> -- loremp ipsum </span>
+                        <span style="float: right">Open</span>
+                      </p>
+                    </mat-list-item>
+                  </mat-list>
+                </div>
+              </mat-card-content>
+
+
+            </mat-card>
+
+
+          </div>
+
+        </div>
+
+
+        <div class="widthRightPanel">
+          <!-- activity panel -->
+          <div style="padding-right: unset; padding-left: unset;margin-right: 1rem; ">
+
+            <mat-card>
+              <mat-card-header>Activity</mat-card-header>
+              <mat-card-content>
+                <mat-list role="list">
+                  <mat-list-item role="listitem">Item 1</mat-list-item>
+                  <mat-divider></mat-divider>
+                  <mat-list-item role="listitem">Item 2</mat-list-item>
+                  <mat-divider></mat-divider>
+
+                  <mat-list-item role="listitem">Item 3</mat-list-item>
+                  <mat-divider></mat-divider>
+                  <mat-list-item role="listitem">Item 1</mat-list-item>
+                  <mat-divider></mat-divider>
+                  <mat-list-item role="listitem">Item 2</mat-list-item>
+                  <mat-divider></mat-divider>
+                  <mat-list-item role="listitem">Item 3</mat-list-item>
+                  <mat-list-item role="listitem">Item 3</mat-list-item>
+                  <mat-divider></mat-divider>
+                  <mat-list-item role="listitem">Item 1</mat-list-item>
+                  <mat-divider></mat-divider>
+                  <mat-list-item role="listitem">Item 2</mat-list-item>
+                  <mat-divider></mat-divider>
+                  <mat-list-item role="listitem">Item 3</mat-list-item>
+                </mat-list>
+              </mat-card-content>
+            </mat-card>
+
+
+
+          </div>
+
+        </div>
+
+
+
+      </div>
+    </div>
+
+
+  </mat-sidenav-content>
+
+</mat-sidenav-container>
+
+
+

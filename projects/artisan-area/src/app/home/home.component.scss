@@ -1,0 +1,73 @@
+
+.imgSpace {
+  width: 22%;
+  position: relative;
+  height: 5rem;
+  bottom: 2rem;
+}
+
+.widthLeftPanel{
+  width: 70%
+}
+
+.widthRightPanel{
+  width: 30%
+}
+
+.widthBody{
+  width: auto;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-top: 1rem;
+  padding-right: .5rem;
+}
+
+
+.salesNotSmall{
+  display: block;
+}
+
+.salesSmall{
+  display: none;
+}
+
+@media all and (max-width: 599px){
+  .widthRightPanel{
+   display: none;
+  }
+  .widthLeftPanel{
+    width: 100%;
+  }
+  .salesNotSmall{
+    display: none;
+  }
+  .salesSmall{
+    display: block;
+  }
+}
+
+.spaceTopWithHello{
+margin-top: 1rem;
+}
+
+
+.removeMargin{
+  margin: unset;
+}
+
+@media all and (max-width: 768px){
+  .salesNotSmall{
+    display: none;
+  }
+  .salesSmall{
+    display: block;
+  }
+}
+
+@media all and (min-height: 800px) {
+  .spaceTopWithHello{
+    margin-top: 2rem;
+  }
+
+}
+

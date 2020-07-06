@@ -1,0 +1,26 @@
+
+
+<mat-toolbar-row>
+  <button mat-raised-button [routerLink]="['/colors']">Back</button>
+</mat-toolbar-row>
+
+<div style="margin-left: 4rem;margin-right: 4rem;">
+
+<div class="full-width">
+  <mat-form-field class="full-width" appearance="outline">
+    <mat-label>Colore (ita)</mat-label>
+    <input matInput [formControl]="itaColorValue">
+  </mat-form-field>
+
+  <mat-form-field class="full-width" appearance="outline">
+    <mat-label>Color (eng)</mat-label>
+    <input matInput [formControl]="engColorValue">
+  </mat-form-field>
+
+</div>
+</div>
+<div class="mt-2"></div>
+
+<mat-toolbar-row>
+  <button mat-raised-button (click)="save()">Salva</button>
+</mat-toolbar-row>

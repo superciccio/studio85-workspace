@@ -1,0 +1,17 @@
+<div style="height: 40px"></div>
+
+<div fxFlexFill>
+  <mat-form-field class="full-width" appearance="outline">
+    <mat-label>Your name</mat-label>
+    <input matInput [formControl]="nameFormControl">
+  </mat-form-field>
+  <mat-form-field class="full-width" appearance="outline">
+    <mat-label>Email</mat-label>
+    <input matInput [formControl]="emailFormControl">
+  </mat-form-field>
+  <mat-form-field class="full-width" appearance="outline">
+    <mat-label>Message</mat-label>
+    <textarea matInput [formControl]="msgFormControl" placeholder="Your message..."></textarea>
+  </mat-form-field>
+  <button mat-raised-button>Send</button>
+</div>

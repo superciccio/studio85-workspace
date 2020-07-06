@@ -1,0 +1,55 @@
+<mat-toolbar-row>
+  <button mat-raised-button [routerLink]="['/relations']">Back</button>
+</mat-toolbar-row>
+
+<div style="margin: 4rem">
+<mat-form-field class="full-width" appearance="outline" *ngIf="productTypes!==null">
+  <mat-label>Product Type</mat-label>
+  <mat-select [(ngModel)]="productTypeFormControl" [compareWith]="compareSelectObject" multiple>
+    <mat-option *ngFor="let prodType of productTypes" [value]="prodType.id">
+      {{prodType.desc['productType']}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<mat-form-field class="full-width" appearance="outline" *ngIf="productCategories!==null">
+  <mat-label>Product Category</mat-label>
+  <mat-select [(ngModel)]="productCategoryFormControl" [compareWith]="compareSelectObject" multiple>
+    <mat-option *ngFor="let prodCat of productCategories" [value]="prodCat.id">
+      {{prodCat.desc['category']}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<mat-form-field class="full-width" appearance="outline" *ngIf="colors!==null">
+  <mat-label>Product Color</mat-label>
+  <mat-select [(ngModel)]="colorFormControl" [compareWith]="compareSelectObject" multiple>
+    <mat-option *ngFor="let col of colors" [value]="col.id">
+      {{col.desc['color']}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<mat-form-field class="full-width" appearance="outline" *ngIf="materials!==null">
+  <mat-label>Product Material</mat-label>
+  <mat-select [(ngModel)]="materialFormControl" [compareWith]="compareSelectObject" multiple>
+    <mat-option *ngFor="let mat of materials" [value]="mat.id">
+      {{mat.desc['material']}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<mat-form-field class="full-width" appearance="outline" *ngIf="shapes!==null">
+  <mat-label>Product Shape</mat-label>
+  <mat-select [(ngModel)]="shapeFormControl" [compareWith]="compareSelectObject" multiple>
+    <mat-option *ngFor="let sh of shapes" [value]="sh.id">
+      {{sh.desc['shape']}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+</div>
+<div class="mt-2"></div>
+
+<mat-toolbar-row>
+  <button mat-raised-button (click)="save()">Salva</button>
+</mat-toolbar-row>

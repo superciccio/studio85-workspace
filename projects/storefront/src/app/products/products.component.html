@@ -1,0 +1,107 @@
+<div style="height: 1rem;"></div>
+<div style="display: inline;" >
+
+  <button mat-flat-button  fxShow.sm fxShow.xs fxHide (click)="openMobileFilters()" style="margin-left: 4rem" >Filters</button>
+
+  <button mat-flat-button [matMenuTriggerFor]="orderBy" style="float: right">
+    <span [ngStyle.md]="{'font-size.px': 20}"
+          [ngStyle.lg]="{'font-size.px': 20}"
+style="color: darkgrey;"
+    >Order By</span>
+    <mat-icon>filter_list</mat-icon>
+  </button>
+  <mat-menu #orderBy="matMenu">
+    <button mat-menu-item>Price - Low to High</button>
+    <button mat-menu-item>Price - High to Low</button>
+    <button mat-menu-item>Alphabetical order (a-z)</button>
+    <button mat-menu-item>Alphabetical order (z-a)</button>
+  </mat-menu>
+</div>
+
+<div
+     [ngStyle.md]="{'margin-bottom': '3rem'}"
+     [ngStyle.lg]="{'margin-bottom': '3.5rem'}" fxShow.md fxShow.lg fxShow.xl fxHide.sm fxHide.xs></div>
+
+<div fxLayout="row" >
+  <div fxFlex="20"   fxShow.md fxShow.lg fxShow.xl fxHide.sm fxHide.xs  >
+    <div fxLayout="row" >
+
+        <span style="text-align: center" fxFlex>Filters</span>
+        <a style="text-align: end" fxFlex>Clear All</a>
+    </div>
+    <mat-list>
+      <mat-action-list>
+       <mat-expansion-panel>
+         <mat-expansion-panel-header>Furniture</mat-expansion-panel-header>
+         <a *ngIf="allFurnitureToBeChecked" (click)="unselectAllFurnitures()" >select/unselect all</a>
+         <div style="display: grid; margin-left: 2rem; margin-top: 1rem">
+           <mat-checkbox *ngFor="let m of listFurnitures" [checked]="allFurnituresChecked(m.id)" color="warn"
+                         [(ngModel)]="listFurnituresChecked[m.id]"
+                         (change)="listFurnituresChecked[m.id] = true">{{m.desc['productType']}}</mat-checkbox>
+         </div>
+       </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>Decor</mat-expansion-panel-header>
+          <a *ngIf="allDecorToBeChecked" (click)="unselectAllDecors()" >select/unselect all</a>
+
+          <div style="display: grid; margin-left: 2rem; margin-top: 1rem">
+            <mat-checkbox *ngFor="let m of listDecors" [checked]="allDecorsChecked(m.id)" color="warn"
+            [(ngModel)]="listDecorsChecked[m.id]"
+            (change)="listDecorsChecked[m.id] = true">{{m.desc['productType']}}</mat-checkbox>
+          </div>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>Lightining</mat-expansion-panel-header>
+          <a *ngIf="allLightToBeChecked" (click)="unselectAllLightinings()" >select/unselect all</a>
+
+          <div style="display: grid; margin-left: 2rem; margin-top: 1rem">
+            <mat-checkbox *ngFor="let m of listLightining" [checked]="allLightesChecked(m.id)" color="warn"
+                          [(ngModel)]="listLightiningsChecked[m.id]"
+                          (change)="listLightiningsChecked[m.id] = true">{{m.desc['productType']}}</mat-checkbox>          </div>
+        </mat-expansion-panel>
+       <mat-expansion-panel>
+         <mat-expansion-panel-header>Material</mat-expansion-panel-header>
+         <div style="display: grid; margin-left: 2rem">
+           <mat-checkbox *ngFor="let m of materials">{{m.desc['material']}}</mat-checkbox>
+         </div>
+       </mat-expansion-panel>
+       <mat-expansion-panel>
+         <mat-expansion-panel-header>Colour</mat-expansion-panel-header>
+         <div style="display: grid; margin-left: 2rem">
+           <mat-checkbox *ngFor="let c of colors">{{c.desc['color']}}</mat-checkbox>
+         </div>
+       </mat-expansion-panel>
+       <mat-expansion-panel>
+         <mat-expansion-panel-header>Shape</mat-expansion-panel-header>
+         <div style="display: grid; margin-left: 2rem">
+           <mat-checkbox *ngFor="let s of shapes">{{s.desc['shape']}}</mat-checkbox>
+         </div>
+       </mat-expansion-panel>
+      </mat-action-list>
+    </mat-list>
+  </div>
+
+  <mat-grid-list rowHeight="120px" style="width: 100%;" #grid [cols]="3">
+    <mat-grid-tile
+      *ngFor="let tile of [1,2,3,4,6,7,8,9,12,4,34,34,34,43,454,5,5,45,45,45,4,45,4,54,5454,5454,45,4,45,343,54,45,54,54,5454,54,45,54,54,54,54,54,454,4,45]"
+      [colspan]="1"
+      [rowspan]="3">
+      <figure>
+        <img src="assets/test-mobile-prod.jpg" width="100%">
+        <figcaption>
+          Sideboard - polpo
+          <br>  <br>
+          Studio85
+          <br>
+          <br>
+          £25.000
+        </figcaption>
+      </figure>
+    </mat-grid-tile>
+  </mat-grid-list>
+
+</div>
+
+
+
+

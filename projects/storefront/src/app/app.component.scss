@@ -1,0 +1,21 @@
+.example-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #D6D6D6;
+}
+
+mat-sidenav {
+  width: 30%;
+}
+
+
+
+.mat-drawer-content{
+  position: relative;
+  z-index: 1;
+  display: block;
+  height: 100%;
+  overflow: auto;
+}

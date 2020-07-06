@@ -1,0 +1,19 @@
+<mat-toolbar-row>
+  <span class="mat-headline">Products</span>
+  <span class="example-spacer"></span>
+  <button mat-raised-button color="primary" [routerLink]="['/products/new']" >New Product</button>
+
+</mat-toolbar-row>
+
+<mat-progress-bar *ngIf="isLoading" color="primary"></mat-progress-bar>
+
+<div *ngIf="!hasResult" >
+  <div class="mat-headline" style="text-align: center;">
+    You have no product in your store
+  </div>
+</div>
+
+<div class="marginLeftRight" *ngIf="hasResult">
+  <app-product-table ></app-product-table>
+</div>
+

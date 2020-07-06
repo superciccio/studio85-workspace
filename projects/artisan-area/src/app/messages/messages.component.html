@@ -1,0 +1,62 @@
+<mat-drawer-container class="example-container">
+  <mat-drawer mode="side" opened>
+
+    <button mat-raised-button aria-label="Write a message" color="accent"
+            style="margin-top: .5rem" class="positionFabWrite" (click)="openNewMessageDialog()">
+      NEW
+    </button>
+
+    <mat-list style="margin-top: 3rem">
+      <mat-list-item> <mat-icon>email</mat-icon> <span style="margin-left: .5rem">All</span> </mat-list-item>
+      <mat-list-item> <mat-icon>send</mat-icon> <span style="margin-left: .5rem">Sent</span> </mat-list-item>
+      <mat-list-item> <mat-icon>delete</mat-icon> <span style="margin-left: .5rem">Bin</span> </mat-list-item>
+    </mat-list>
+
+
+
+
+
+  </mat-drawer>
+  <mat-drawer-content>
+
+
+    <!-- two line list -->
+    <mat-list>
+      <mat-list-item *ngFor="let message of [1,2,3]">
+        <h3 matLine> Studio 85 (from) </h3>
+        <p matLine>
+          <span> Product XT$&HF (subject) </span>
+          <span class="demo-2"> Images issue (content) </span>
+        </p>
+        <button mat-icon-button>
+          <mat-icon>reply</mat-icon>
+        </button>
+
+        <button mat-icon-button>
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-list-item>
+    </mat-list>
+
+    <!-- three line list -->
+    <mat-list>
+      <mat-list-item *ngFor="let message of [1,2,3]">
+
+        <h3 matLine> Studio 85 (from)</h3>
+        <p matLine> Payment (subject) </p>
+        <p matLine class="demo-2" *ngIf="message!==2"> We've paid you! (content) </p>
+        <p matLine class="demo-2" *ngIf="message===2"> hjffffffffffffffffffhjffffffffffffffffffhjffffffffffffffffffhjffffffffffffffffffhjffffffffffffffffffhjffffffffffffffffffhjffffffffffffffffffhjffffffffffffffffffhjffffffffffffffffffhjffffffffffffffffffhjffffffffffffffffff </p>
+
+        <button mat-icon-button>
+          <mat-icon>reply</mat-icon>
+        </button>
+
+        <button mat-icon-button>
+          <mat-icon>delete</mat-icon>
+        </button>
+
+      </mat-list-item>
+    </mat-list>
+
+  </mat-drawer-content>
+</mat-drawer-container>

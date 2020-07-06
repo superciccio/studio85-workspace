@@ -1,0 +1,206 @@
+<mat-toolbar-row>
+  <span class="mat-title">New Product</span>
+  <span class="example-spacer"></span>
+  <button mat-raised-button color="primary" [routerLink]="['/products']" >Back</button>
+</mat-toolbar-row>
+
+<div class="marginLeftRight">
+
+
+
+  <div class="full-width">
+
+    <mat-card>
+
+      <mat-toolbar-row>
+    <span class="mat-title">
+        General information
+          </span>
+
+
+      </mat-toolbar-row>
+
+
+      <mat-card-content>
+
+        <div class="mt-2"></div>
+
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Name</mat-label>
+          <input matInput placeholder="Name" [formControl]="nameFormControl" >
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Description</mat-label>
+          <textarea matInput placeholder="Description" [formControl]="descFormControl" > </textarea>
+        </mat-form-field>
+
+        <mat-form-field class="full-width" appearance="outline" *ngIf="productTypes!==null">
+          <mat-label>Product Type</mat-label>
+          <mat-select [formControl]="productTypeFormControl" [compareWith]="compareProdTypeObject">
+            <mat-option *ngFor="let prodType of productTypes" [value]="prodType.id">
+              {{prodType.desc['productType']}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="full-width" appearance="outline" *ngIf="productCategories!==null">
+          <mat-label>Product Category</mat-label>
+          <mat-select [formControl]="productCategoryFormControl" [compareWith]="compareProdCategoryObject">
+            <mat-option *ngFor="let prodCat of productCategories" [value]="prodCat.id">
+              {{prodCat.desc['category']}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+      </mat-card-content>
+
+
+
+    </mat-card>
+
+
+
+
+
+
+  </div>
+
+
+<div class="mt-2"></div>
+
+<div class="full-width" >
+
+<mat-card >
+
+<mat-toolbar-row>
+    <span class="mat-title">
+        Product variant
+          </span>
+  <div class="example-spacer"></div>
+
+  <button mat-raised-button (click)="newVariant()" color="primary" >Edit/Create</button>
+
+
+</mat-toolbar-row>
+
+
+
+  <mat-list>
+
+
+    <mat-list-item>
+      <img matListAvatar  src="https://imaging.nikon.com/lineup/dslr/df/img/sample/img_01.jpg">
+      <span>bla bla bla</span>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+  </mat-list>
+</mat-card>
+</div>
+
+  <div class="mt-2"></div>
+
+
+  <div class="full-width">
+
+    <mat-card>
+
+      <mat-toolbar-row>
+    <span class="mat-title">
+        Further information
+          </span>
+
+
+      </mat-toolbar-row>
+
+
+      <mat-card-content>
+
+        <div class="mt-2"></div>
+
+        <div style="display: flex;">
+
+
+          <mat-form-field appearance="outline" >
+            <mat-label>Price</mat-label>
+            <input matInput type="number" class="example-right-align" [formControl]="priceFormControl">
+            <span matSuffix>.00</span>
+          </mat-form-field>
+
+        <div style=" margin-left: 1rem; vertical-align: middle;     margin-top: 2.5%;">
+          <mat-label>Price after Studio 85 commission</mat-label>
+          <b>
+            {{priceAfterCommissionFormControl() | currency:'EUR'}}
+          </b>
+
+        </div>
+
+        </div>
+
+        <mat-form-field appearance="outline" style="width: 50%">
+          <mat-label>Quantity</mat-label>
+          <input matInput placeholder="Quantity" type="number" [formControl]="quantityFormControl" >
+        </mat-form-field>
+
+
+
+<!--        &lt;!&ndash; Category &ndash;&gt;-->
+<!--        <mat-form-field style="width: 100%" appearance="outline">-->
+<!--          <input matInput placeholder="Category" aria-label="Category of the product" [matAutocomplete]="autoCategory" [formControl]="categoryCtrl" (keyup.enter)="addCategoryOption()">-->
+<!--          <mat-autocomplete #autoCategory="matAutocomplete" (optionSelected)="optionCategorySelected($event.option)" [displayWith]="categoryDisplayFn">-->
+<!--            <mat-option *ngFor="let item of filteredCategoryItems | async" [value]="item">-->
+<!--              <span>{{item.name}}</span>-->
+<!--            </mat-option>-->
+<!--          </mat-autocomplete>-->
+<!--          <button *ngIf="showAddCategoryButton && categoryCtrl.value" matSuffix mat-button mat-icon-button (click)="addCategoryOption()">-->
+<!--            <mat-icon matTooltip='Add "{{categoryCtrl.value}}"'>add</mat-icon>-->
+<!--          </button>-->
+<!--        </mat-form-field>-->
+
+        <!-- Collection -->
+        <mat-form-field style="width: 100%" appearance="outline">
+          <input matInput placeholder="Collection" aria-label="If the product belong to a particular collection"
+                 [matAutocomplete]="autoCollection" [formControl]="collectionCtrl" (keyup.enter)="addCollectionOption()">
+          <mat-autocomplete #autoCollection="matAutocomplete" (optionSelected)="optionCollectionSelected($event.option)"
+                            [displayWith]="collectionDisplayFn">
+            <mat-option *ngFor="let item of filteredCollectionItems | async" [value]="item">
+              <span>{{item.name}}</span>
+            </mat-option>
+          </mat-autocomplete>
+          <button *ngIf="showAddCollectionButton && collectionCtrl.value" matSuffix mat-button mat-icon-button (click)="addCollectionOption()">
+            <mat-icon matTooltip='Add "{{collectionCtrl.value}}"'>add</mat-icon>
+          </button>
+        </mat-form-field>
+
+        <mat-checkbox [formControl]="exclusiveFormControl">Is this an Exclusive product ?</mat-checkbox>
+        <div *ngIf="exclusiveFormControl.value === true">
+          If so, let the customer know what's time that has to wait
+          <mat-form-field style="width: 100%" appearance="outline">
+            <mat-select>
+              <mat-option>
+                3 days
+              </mat-option>
+              <mat-option>
+                7 days
+              </mat-option>
+              <mat-option>
+                2 weeks
+              </mat-option>
+              <mat-option>
+                2 weeks but less than 4 weeks
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+      </mat-card-content>
+    </mat-card>
+
+
+  </div>
+
+<mat-toolbar-row>
+  <button mat-raised-button color="primary" [routerLink]="['/products']">CANCEL</button>
+  <div class="example-spacer"></div>
+  <button mat-raised-button color="primary">SAVE</button>
+</mat-toolbar-row>

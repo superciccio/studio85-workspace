@@ -1,0 +1,23 @@
+
+<div class="userSettingsMenu">
+
+  <button mat-button [matMenuTriggerFor]="menu" >
+
+  <img src="assets/img_avatar.png" class="avatar">
+  <span class="label">
+    admin@example.com
+  </span>
+    <mat-icon>keyboard_arrow_down</mat-icon>
+  </button>
+
+  <mat-menu #menu="matMenu" xPosition="after">
+    <button mat-menu-item [routerLink]="['account-settings']">Account Settings</button>
+    <button mat-menu-item>Logout</button>
+  </mat-menu>
+
+
+</div>
+
+
+
+

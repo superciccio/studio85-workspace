@@ -1,0 +1,100 @@
+<mat-toolbar-row>
+  <span class="mat-headline">Products</span>
+  <span class="example-spacer"></span>
+  <button mat-raised-button color="primary" (click)="back()" >Back</button>
+  <div class="ml-2"></div>
+  <button mat-raised-button color="primary"  >Save</button>
+</mat-toolbar-row>
+
+<div class="marginLeftRight" style="display: flex">
+
+  <div style="width: 25%">
+
+    <mat-card>
+      <mat-card-content>
+        <mat-list>
+          <div mat-subheader>Variants</div>
+
+          <mat-list-item>
+           <img matListAvatar [src]="urlImg">
+            <span>{{descVariant}}</span>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+        </mat-list>
+      </mat-card-content>
+    </mat-card>
+
+
+
+  </div>
+
+  <div style="width: 75%">
+
+    <mat-card>
+      <mat-card-title>
+        Infos
+      </mat-card-title>
+      <mat-card-content>
+
+        <mat-form-field class="full-width" appearance="outline" *ngIf="config!==null">
+          <mat-label>Colour</mat-label>
+          <mat-select [formControl]="colorFormControl" [compareWith]="compareColorObject">
+            <mat-option *ngFor="let color of colors" [value]="color.id">
+              {{color.desc['color']}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="full-width" appearance="outline" *ngIf="config!==null">
+          <mat-label>Shape</mat-label>
+          <mat-select [compareWith]="compareShapeObject" [formControl]="shapeFormControl">
+            <mat-option *ngFor="let shape of shapes" [value]="shape.id">
+              {{shape.desc['shape']}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="full-width" appearance="outline" *ngIf="config!==null">
+          <mat-label>Material</mat-label>
+          <mat-select [compareWith]="compareMaterialObject" [formControl]="materialFormControl">
+            <mat-option *ngFor="let material of materials" [value]="material.id">
+              {{material.desc['material']}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Dimension</mat-label>
+          <input matInput type="text" [formControl]="dimensionFormControl">
+        </mat-form-field>
+
+        <app-file-upload></app-file-upload>
+
+        <div class="mt-2" > </div>
+
+        <mat-form-field class="full-width" appearance="outline" >
+          <mat-label>Quantity</mat-label>
+          <input matInput type="number" class="example-right-align" [formControl]="quantityFormControl">
+        </mat-form-field>
+
+        <mat-form-field class="full-width" appearance="outline" >
+          <mat-label>Note</mat-label>
+          <textarea matInput placeholder="Write any additional information, that you might have..." type="text" class="example-right-align" [formControl]="noteFormControl">
+          </textarea>
+        </mat-form-field>
+
+        <mat-checkbox [formControl]="isPriceDifferent">Does it have a different price ?</mat-checkbox>
+
+        <mat-form-field class="full-width" appearance="outline" *ngIf="isPriceDifferent.value === true">
+          <mat-label>Price</mat-label>
+          <input matInput type="number" class="example-right-align" [formControl]="price">
+          <span matSuffix>.00</span>
+        </mat-form-field>
+
+      </mat-card-content>
+    </mat-card>
+
+  </div>
+
+
+</div>

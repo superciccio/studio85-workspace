@@ -1,0 +1,30 @@
+.avatar {
+  vertical-align: middle;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+}
+
+.label{
+  align-items: center;
+  white-space: nowrap;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+
+.userSettingsMenu{
+  padding: 10px;
+}
+
+@media all and (max-width: 599px) {
+  .userSettingsMenu{
+    padding: 6px;
+  }
+
+}
+
+//::ng-deep.mat-menu-panel {
+//  /* These numbers are my requirement, put something which suits yours */
+//  transform: translate(48px, 18px);
+//}

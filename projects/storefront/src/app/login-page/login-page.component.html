@@ -1,0 +1,20 @@
+<div >
+  <div style="margin: 3.5rem">
+    <mat-form-field class="full-width">
+      <mat-label>Email</mat-label>
+      <input matInput [formControl]="emailFormControl" autocomplete="email">
+    </mat-form-field>
+    <mat-form-field class="full-width">
+      <mat-label>Password</mat-label>
+      <input matInput [formControl]="passwordFormControl" type="password" autocomplete="password">
+    </mat-form-field>
+    <div class="mt-2">
+      <button mat-raised-button>Login</button>
+    </div>
+    <br>
+    <div class="mt-2">
+      <small>Forgot password</small>
+    </div>
+  </div>
+</div>
+

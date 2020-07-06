@@ -1,0 +1,142 @@
+
+
+
+  <section class="child" id="banner">
+
+    <video playsinline preload="auto"  autoplay muted="muted" loop="loop" id="videobcg">
+      <source src="assets/VID-20200704-WA0010.mp4" type="video/mp4">
+      <source src="assets/VID-20200704-WA0010.webm" type="video/webm">
+    </video>
+
+  </section>
+
+
+
+<section class="child">
+  <div fxLayout="row" fxHide.lt-sm style="justify-content: center">
+    <div fxFlex="15" ></div>
+    <div fxFlex [routerLink]="['products/furniture']" class="pointer">
+      <figure>
+        <picture>
+
+          <img width="100%" src="assets/mob.jpg" alt="Snow">
+
+          <!--          <img width="100%"-->
+          <!--             src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1920px-Image_created_with_a_mobile_phone.png" alt="Snow">-->
+        </picture>
+        <figcaption>
+          FURNITURE
+        </figcaption>
+      </figure>
+    </div>
+    <div fxFlex [routerLink]="['products/furniture']" class="pointer">
+      <figure >
+        <img width="100%" src="assets/test-mobile-prod.jpg" alt="Snow">
+        <figcaption>
+          FURNITURE
+
+        </figcaption>
+      </figure>
+    </div>
+    <div fxFlex [routerLink]="['products/decor']" class="pointer">
+      <figure>
+        <img width="100%" src="assets/decor.jpg" alt="Snow">
+        <figcaption >
+          DECOR
+        </figcaption>
+      </figure>
+    </div>
+      <div fxFlex="15" ></div>
+  </div>
+</section>
+  <section class="child">
+    <div style="margin-top: 8rem"></div>
+    <div fxLayout="row" fxLayout.lt-md="column" style="justify-content: center" fxLayoutGap="15px">
+
+      <div  >
+        <div class="container">
+          <img src="assets/be-artisan.jpg" alt="Avatar "  class="image">
+          <div class="overlay ">
+            <div class="text "
+
+                 [ngStyle.xs]="{'font-size.px': 16}"
+                 [ngStyle.sm]="{'font-size.px': 20 }"
+                 [ngStyle.md]="{'font-size.px': 30 }"
+                 [ngStyle.lg]="{'font-size.px': 36 }"
+            >Be An Artisan</div>
+          </div>
+        </div>
+      </div>
+      <div  >
+
+        <div class="container">
+          <img src="assets/be-trader.jpg" alt="Avatar " class="image">
+          <div class="overlay ">
+            <div class="text "
+
+                 [ngStyle.xs]="{'font-size.px': 16}"
+                 [ngStyle.sm]="{'font-size.px': 20 }"
+                 [ngStyle.md]="{'font-size.px': 30 }"
+                 [ngStyle.lg]="{'font-size.px': 36 }"
+
+            >Be a Trader</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+<section class="child">
+  <div
+    style="text-align: center; margin-top: 2rem; margin-bottom: 2rem"
+    [ngStyle.xs]="{'font-size.px': 20}"
+    [ngStyle.sm]="{'font-size.px': 24}"
+    [ngStyle.md]="{'font-size.px': 30}"
+    [ngStyle.lg]="{'font-size.px': 36}">
+    INTERIOR DESIGN SERVICES
+  </div>
+  <div fxLayout="row" fxLayout.sm="row" fxLayout.md="row" style="justify-content: center">
+    <div fxFlex="15"></div>
+    <div fxFlex >
+      <figure>
+        <img width="100%"
+             src="assets/concept-design.png" alt="Snow">
+        <figcaption>
+          <b>CONCEPT DESIGN</b>
+          <br>
+          <br>
+          We work with you to develop initial mood boards, along with ideas on initial materials.
+        </figcaption>
+      </figure>
+    </div>
+    <div fxFlex >
+      <figure>
+        <img width="100%"
+             src="assets/design-deve.png" alt="Snow">
+        <figcaption>
+          DESIGN DEVELOPMENT
+          <br>
+          <br>
+          This stage of the project is where we start to turn ideas into reality.        </figcaption>
+      </figure>
+    </div>
+    <div fxFlex >
+      <figure>
+        <img width="100%"
+             src="assets/tech-draw.png" alt="Snow">
+        <figcaption>
+          TECHNICAL DRAWINGS
+          <br>
+          <br>
+          Once the Design Development stage is signed off, sections and elevations.
+
+        </figcaption>
+      </figure>
+    </div>
+    <div fxFlex="15"></div>
+
+  </div>
+</section>
+
+

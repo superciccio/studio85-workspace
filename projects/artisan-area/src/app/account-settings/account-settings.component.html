@@ -1,0 +1,60 @@
+<div class="marginLeftRight">
+
+
+  <mat-card>
+    <mat-card-title>Info about you</mat-card-title>
+    <mat-card-content>
+      <mat-form-field style="width: 100%" appearance="outline">
+        <mat-label>Name</mat-label>
+        <input matInput autocomplete="name" placeholder="Name" [formControl]="nameFormControl">
+      </mat-form-field>
+      <mat-form-field style="width: 100%" appearance="outline">
+        <mat-label>Surname</mat-label>
+        <input matInput autocomplete="lastname" placeholder="Surname" [formControl]="surnameFormControl">
+      </mat-form-field>
+      <mat-form-field appearance="outline" style="width: 100%">
+        <mat-label>Email</mat-label>
+        <input matInput autocomplete="email" placeholder="Email@example.com" [formControl]="emailFormControl">
+      </mat-form-field>
+      <mat-form-field appearance="outline" style="width: 100%">
+        <mat-label>Name of your shop</mat-label>
+        <input matInput placeholder="Type in and Press enter, to see availability" [formControl]="shopNameFormControl">
+        <mat-icon matSuffix>search</mat-icon>
+        <div *ngIf="message.length>0 && shopNameFormControl.value.length > 0">
+          <div [innerHTML]="message"></div>
+        </div>
+
+      </mat-form-field>
+<!--      <mat-form-field>-->
+<!--        <mat-label>Preferred language</mat-label>-->
+<!--      </mat-form-field>-->
+    </mat-card-content>
+  </mat-card>
+
+  <form>
+<input type="hidden" autocomplete="username">
+    <mat-card>
+      <mat-card-title>Password</mat-card-title>
+      <mat-card-subtitle>For security reason, we recommend to change your password every 3 months</mat-card-subtitle>
+
+      <mat-card-content>
+
+        <section>
+        <mat-checkbox [formControl]="remindMePasswordFormControl">Remind me!</mat-checkbox>
+        </section>
+
+      </mat-card-content>
+    </mat-card>
+
+  </form>
+
+
+</div>
+
+<mat-toolbar>
+  <mat-toolbar-row>
+    <button mat-raised-button color="primary">Cancel</button>
+    <div class="example-spacer"></div>
+    <button mat-raised-button (click)="save()" color="primary">Save</button>
+  </mat-toolbar-row>
+</mat-toolbar>

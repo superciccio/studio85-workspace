@@ -1,0 +1,19 @@
+<header>
+<mat-toolbar class="example-header " >
+  <mat-icon fxShow.lt-md="true" fxShow="false" (click)="openMobileMenu()" >menu</mat-icon>
+
+  <a mat-button [routerLink]="['products']" fxShow.lt-md="false" fxShow.gt-md="true" routerLinkActive="active-list-item">Products</a>
+  <a mat-button  [routerLink]="['services']"  fxShow.lt-md="false" fxShow.gt-md="true" routerLinkActive="active-list-item">Services</a>
+  <a mat-button  [routerLink]="['about-us']"  fxShow.lt-md="false" fxShow.gt-md="true" routerLinkActive="active-list-item">About us</a>
+  <div class="example-spacer"></div>
+  <img src="assets/logo.svg" width="160" class="pointer"  [routerLink]="['']">
+<div class="example-spacer"></div>
+  <a mat-button [routerLink]="['contacts']" fxShow.lt-md="false" fxShow.gt-md="true">Contacts</a>
+  <a mat-button [routerLink]="['trade']" >Trade</a>
+  <a mat-button (click)="open(false)">Join/Login</a>
+  <mat-icon (click)="open(true)" style="margin: 1rem" class="pointer">shopping_cart</mat-icon>
+  <span class="cdk-visually-hidden">
+      Your basket has 15 elements in it
+    </span>
+</mat-toolbar>
+</header>

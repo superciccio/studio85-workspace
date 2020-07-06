@@ -1,0 +1,65 @@
+<div class="flag"></div>
+
+<mat-toolbar class="example-header ">
+
+  <mat-icon (click)="sidenav.open()" class="pointer showMenuBtn" >menu</mat-icon>
+
+</mat-toolbar>
+
+<mat-sidenav-container class="example-container">
+
+  <mat-sidenav #sidenav [mode]="'side'" class="example-sidenav"
+               [fixedInViewport]="true" [fixedTopGap]="0"
+               [fixedBottomGap]="0">
+
+    <div style="    height: 80px;
+    display: block;
+    position: relative;" [routerLink]="['/']" class="pointer">
+
+      <img src="../assets/logo.svg" height="70%" width="70%"  style="    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);">
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <mat-nav-list>
+      <a mat-list-item routerLinkActive="active-list-item" [routerLink]="['account-information']">
+        <mat-icon mat-list-icon >info</mat-icon>
+        <span style="margin-left: 1rem;color: black;">Account Information</span>
+        <mat-divider></mat-divider>
+
+      </a>
+      <mat-divider></mat-divider>
+      <a mat-list-item routerLinkActive="active-list-item" [routerLink]="['my-orders']">
+        <mat-icon mat-list-icon >category</mat-icon>
+        <span style="margin-left: 1rem;color: black;">My Orders</span>
+        <mat-divider></mat-divider>
+
+      </a>
+
+      <a mat-list-item routerLinkActive="active-list-item" [routerLink]="['wish-list']">
+        <mat-icon mat-list-icon >favourite</mat-icon>
+        <span style="margin-left: 1rem;color: black;">My Wish Lists</span>
+        <mat-divider></mat-divider>
+
+      </a>
+
+      <a mat-list-item (click)="logout()" >
+        <mat-icon mat-list-icon >list_alt</mat-icon>
+        <span style="margin-left: 1rem;color: black;">Logout</span>
+        <mat-divider></mat-divider>
+
+      </a>
+
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content  >
+
+    <router-outlet></router-outlet>
+
+  </mat-sidenav-content>
+
+</mat-sidenav-container>

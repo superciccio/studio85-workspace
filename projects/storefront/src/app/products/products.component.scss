@@ -1,0 +1,8 @@
+.example-container {
+  height: auto;
+  border: 1px solid #555;
+}
+
+.mat-expansion-panel:not([class*=mat-elevation-z]){
+  box-shadow: unset;
+}

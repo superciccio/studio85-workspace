@@ -6,5 +6,60 @@
 */
 {
   "files": [],
-  "references": []
+  "references": [
+    {
+      "path": "./projects/storefront/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/storefront/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/storefront/e2e/tsconfig.json"
+    },
+    {
+      "path": "./projects/admin-area/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/admin-area/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/admin-area/e2e/tsconfig.json"
+    },
+    {
+      "path": "./projects/artisan-area/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/artisan-area/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/artisan-area/e2e/tsconfig.json"
+    },
+    {
+      "path": "./projects/customer-area/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/customer-area/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/customer-area/e2e/tsconfig.json"
+    },
+    {
+      "path": "./projects/partner-area/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/partner-area/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/partner-area/e2e/tsconfig.json"
+    },
+    {
+      "path": "./projects/trader-area/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/trader-area/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/trader-area/e2e/tsconfig.json"
+    }
+]
 }
